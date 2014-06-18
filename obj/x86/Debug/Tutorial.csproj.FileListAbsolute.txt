@@ -1,0 +1,36 @@
+C:\Users\Assunta\Google Drive Marco\Labs 2014\Demo2\bin\Debug\Tutorial.exe.config
+C:\Users\Assunta\Google Drive Marco\Labs 2014\Demo4\bin\Debug\Tutorial.exe.config
+C:\Users\Assunta\Google Drive Marco\Labs 2014\Demo4\bin\Debug\Tutorial.exe
+C:\Users\Assunta\Google Drive Marco\Labs 2014\Demo4\bin\Debug\Tutorial.pdb
+C:\Users\Assunta\Google Drive Marco\Labs 2014\Demo4\bin\Debug\Mogre.xml
+C:\Users\Assunta\Google Drive Marco\Labs 2014\Demo4\obj\x86\Debug\Tutorial.csprojResolveAssemblyReference.cache
+C:\Users\Assunta\Google Drive Marco\Labs 2014\Demo4\obj\x86\Debug\Tutorial.exe
+C:\Users\Assunta\Google Drive Marco\Labs 2014\Demo4\obj\x86\Debug\Tutorial.pdb
+F:\Google Drive\Labs 2014\Demo4\bin\Debug\Tutorial.exe.config
+F:\Google Drive\Labs 2014\Demo4\obj\x86\Debug\Tutorial.exe
+F:\Google Drive\Labs 2014\Demo4\obj\x86\Debug\Tutorial.pdb
+F:\Google Drive\Labs 2014\Demo4\bin\Debug\Tutorial.exe
+F:\Google Drive\Labs 2014\Demo4\bin\Debug\Tutorial.pdb
+F:\Google Drive\Labs 2014\Demo4\bin\Debug\Mogre.xml
+F:\Google Drive\Labs 2014\Demo4\obj\x86\Debug\Tutorial.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\Demo4\bin\Debug\Tutorial.exe.config
+\\psf\Home\Desktop\Demo4\obj\x86\Debug\Tutorial.exe
+\\psf\Home\Desktop\Demo4\obj\x86\Debug\Tutorial.pdb
+\\psf\Home\Desktop\Demo4\bin\Debug\Tutorial.exe
+\\psf\Home\Desktop\Demo4\bin\Debug\Tutorial.pdb
+\\psf\Home\Desktop\Demo4\bin\Debug\Mogre.xml
+\\psf\Home\Desktop\Demo4\obj\x86\Debug\Tutorial.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\Demo4 copy\bin\Debug\Tutorial.exe.config
+\\psf\Home\Desktop\Demo4 copy\obj\x86\Debug\Tutorial.exe
+\\psf\Home\Desktop\Demo4 copy\obj\x86\Debug\Tutorial.pdb
+\\psf\Home\Desktop\Demo4 copy\bin\Debug\Tutorial.exe
+\\psf\Home\Desktop\Demo4 copy\bin\Debug\Tutorial.pdb
+\\psf\Home\Desktop\Demo4 copy\bin\Debug\Mogre.xml
+\\psf\Home\Desktop\Demo4 copy\obj\x86\Debug\Tutorial.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\3d Project\bin\Debug\Tutorial.exe.config
+\\psf\Home\Desktop\3d Project\obj\x86\Debug\Tutorial.exe
+\\psf\Home\Desktop\3d Project\obj\x86\Debug\Tutorial.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\3d Project\bin\Debug\Tutorial.exe
+\\psf\Home\Desktop\3d Project\bin\Debug\Tutorial.pdb
+\\psf\Home\Desktop\3d Project\bin\Debug\Mogre.xml
+\\psf\Home\Desktop\3d Project\obj\x86\Debug\Tutorial.pdb

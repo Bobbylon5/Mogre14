@@ -1,0 +1,102 @@
+material TexAddressMode
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+			texture_unit
+			{
+				texture clouds.jpg
+				scroll_anim 0.1 0.1
+			}
+		}
+	}
+}
+
+
+material Rust
+{
+    technique
+    {
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+                texture a_gold_and_bronze_metallic_with_red_and_white_accents.jpg
+			}
+
+		}
+	}
+}
+
+material Meteor
+{
+    technique
+    {
+		pass
+		{
+			scene_blend alpha_blend
+			texture_unit
+			{
+                texture Chrome.jpg
+			}
+
+		}
+	}
+}
+
+
+material Steel
+{
+    technique
+    {
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+                texture thCACEKFCN.jpg
+			}
+
+		}
+	}
+}
+
+
+material DirtGrass
+{
+    technique
+    {
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+                texture terr_dirt-grass.jpg
+			}
+
+		}
+	}
+}
+
+material healthBar
+{
+    technique
+    {
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+                texture terr_dirt-grass.jpg
+			}
+
+		}
+	}
+}

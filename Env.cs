@@ -1,27 +1,28 @@
 ﻿using System;
 using Mogre;
 using PhysicsEng;
+using System.Collections.Generic;
 
 namespace Mogre.Tutorial
 {
     /// <summary>
     /// This class implements the game environment
     /// </summary>
-    class Environment
+    class Env : Environment
     {
-        SceneManager mSceneMgr;             // This field will contain a reference of the scene manages
         RenderWindow mWindow;               // This field will contain a reference to the rendering window
-        Light light;                        // This field will contain a reference of a light
-        Ground ground;                      // This field will contain an istance of the ground object
-        Wall wall;                          // This field will contain an istance of the ground object
+        protected Wall wall1;                         // This field will contain an istance of the wall object
+        protected Wall wall2;                         // This field will contain an istance of the wall object
+        protected Wall wall3;                         // This field will contain an istance of the wall object
 
+        protected String bob = "Vector3.UNIT_X";
 
-        #region Environment
+        #region Environment Env
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="mSceneMgr">A reference to the scene manager</param>
-        public Environment(SceneManager mSceneMgr, RenderWindow mWindow)
+        public Env(SceneManager mSceneMgr, RenderWindow mWindow)
         {
             this.mSceneMgr = mSceneMgr;
             this.mWindow = mWindow;
@@ -30,6 +31,7 @@ namespace Mogre.Tutorial
         }
         #endregion
 
+
         #region Load
         private void Load()
         {
@@ -37,20 +39,15 @@ namespace Mogre.Tutorial
             SetSky();
             SetFog();
             SetShadows();
-            ground = new Ground(mSceneMgr);
-            wall = new Wall(mSceneMgr);
-            Physics.AddBoundary(ground.Plane);
-        }
-        #endregion
 
-        #region Dispose
-        /// <summary>
-        /// This method dispose of any object instanciated in this class
-        /// </summary>
-        public void Dispose()
-        {
-            ground.Dispose();
-            wall.Dispose();
+            wall1 = new Wall(mSceneMgr);
+            //wall2 = new Wall(mSceneMgr);
+            //wall2.Yaw(180);
+            //wall1.SetPosition(new Vector3(000, 500, 000));
+            ground = new Ground(mSceneMgr);
+            //walls = new List<Wall>();
+            //walls.Add(wall1);
+            //Physics.AddBoundary(ground.Plane);
         }
         #endregion
 
@@ -101,7 +98,7 @@ namespace Mogre.Tutorial
 
             light.Type = Light.LightTypes.LT_POINT;                                     // Sets the light to be a point light
 
-            float range = 1000;                                                         // Sets the light range
+            float range = 500;                                                         // Sets the light range
             float constantAttenuation = 0;                                              // Sets the constant attenuation of the light [0, 1]
             float linearAttenuation = 0;                                                // Sets the linear attenuation of the light [0, 1]
             float quadraticAttenuation = 0.0001f;                                       // Sets the quadratic  attenuation of the light [0, 1]
@@ -118,6 +115,5 @@ namespace Mogre.Tutorial
             mSceneMgr.ShadowTechnique = ShadowTechnique.SHADOWTYPE_STENCIL_ADDITIVE;
         }
         #endregion
-
     }
 }

@@ -48,10 +48,10 @@ namespace RaceGame
         /// <summary>
         /// Read only. This property gets the postion of the robot in the scene
         /// </summary>
-        public Vector3 Position
-        {
-            get { return robotNode.Position; }
-        }
+        //public Vector3 Position
+        //{
+        //    get { return robotNode.Position; }
+        //}
 
         /// <summary>
         /// This methods set the position of the robot
@@ -280,10 +280,10 @@ namespace RaceGame
         /// This method moves the robot in the given direction
         /// </summary>
         /// <param name="direction">The direction along which move the robot</param>
-        public void Move(Vector3 direction)
-        {
-            robotNode.Translate(direction);
-        }
+        //public void Move(Vector3 direction)
+        // {
+        //    robotNode.Translate(direction);
+        //}
 
         /// <summary>
         /// This method rotate the robot accordingly  with the given angles

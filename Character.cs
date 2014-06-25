@@ -1,5 +1,7 @@
 ﻿using System;
 using Mogre;
+using Mogre.TutorialFramework;
+using PhysicsEng;
 
 namespace RaceGame
 {
@@ -8,6 +10,9 @@ namespace RaceGame
     /// </summary>
     abstract class Character
     {
+
+
+
         protected CharacterController controller;       // This field is to contains an instace of the CharacterController
         /// <summary>
         /// Read/Write. This property allows to set and read the character controller.
@@ -17,6 +22,7 @@ namespace RaceGame
             get { return controller; }
             set { controller = value; }
         }
+
 
         protected CharacterStats stats;                 // This field is to contain an instance of the CharacterStats
         /// <summary>
@@ -28,6 +34,7 @@ namespace RaceGame
             get { return stats; }
         }
 
+
         protected CharacterModel model;                 // This field is to contain an instance of the CharacterModel
         /// <summary>
         /// Read/Write. This property allows to set and read the character model.
@@ -38,6 +45,7 @@ namespace RaceGame
             get { return model; }
         }
 
+
         protected bool isDead = false;                  // This field is to determine wheter the caracter is dead
         /// <summary>
         /// Read/Write. This property allows to set and read whether the character is dead.
@@ -46,6 +54,16 @@ namespace RaceGame
         {
             get { return isDead; }
             set { isDead = value; }
+        }
+
+
+
+        /// <summary>
+        /// This method disposes od the character when it dies
+        /// </summary>
+        virtual protected void Die()
+        {
+            model.Dispose();
         }
 
         /// <summary>
@@ -66,6 +84,7 @@ namespace RaceGame
             model.Move(direction); 
         }
 
+
         /// <summary>
         /// This virtual method allows to rotate the character in the specified transform space.
         /// </summary>
@@ -78,6 +97,16 @@ namespace RaceGame
         }
 
         /// <summary>
+        /// This method rotate the robot accordingly  with the given angles
+        /// </summary>
+        /// <param name="angles">The angles by which rotate the robot along each main axis</param>
+        //public void xRotate(Vector3 angles)
+        //{
+        //    model.Yaw(angles.x);
+        //}
+
+
+        /// <summary>
         /// This virtual method is to implement the logic for shooting of the character
         /// </summary>
         virtual public void Shoot() { }
@@ -88,13 +117,7 @@ namespace RaceGame
         /// <param name="evt">A frame event which can be used to tune the character update</param>
         virtual public void Update(FrameEvent evt) { }
         
-        /// <summary>
-        /// This method disposes od the character when it dies
-        /// </summary>
-        virtual protected void Die()
-        {
-            model.Dispose();
-        }
+
 
     }
 }

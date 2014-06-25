@@ -15,14 +15,27 @@ namespace RaceGame
         MOIS.Mouse mMouse;
         MOIS.InputManager mInputMgr;
 
-        PlayerModel playerModel;                // Reference to an istance of the robot 
+        #region temp
+        //PlayerModel playerModel;                // Reference to an istance of the player 
         /// <summary>
         /// Read only. This property allow to set a reference to an istance of the robot
         /// </summary>
-        public PlayerModel PlayerModel
-        {
-            set { playerModel = value; }
-        }
+        //public PlayerModel PlayerModel
+        //{
+        //    set { playerModel = value; }
+        //}
+        #endregion
+
+        Character character;
+
+        PlayerController playerController;                // Reference to an istance of the playerControler 
+        /// <summary>
+        /// Read only. This property allow to set a reference to an istance of the robot
+        /// </summary>
+        //public PlayerController playerController
+        //{
+        //    set { playerController = value; }
+        //}
 
         /// <summary>
         /// Private constructor (for singleton pattern)
@@ -76,8 +89,8 @@ namespace RaceGame
             if (mKeyboard.IsKeyDown(MOIS.KeyCode.KC_E))
                 angles -= .1f;
 
-            playerModel.hMove(displacements);
-            playerModel.Rotate(angles);
+            //character.Move(displacements);
+            //character.xRotate(angles);
 
             if (mMouse.MouseState.ButtonDown(MOIS.MouseButtonID.MB_Left))
             {
@@ -88,7 +101,7 @@ namespace RaceGame
             {
                 angles.x = -mMouse.MouseState.Y.rel; 
             }
-            playerModel.Rotate(angles);
+            //playerController.Rotate(angles);
             return true;
         }
 
@@ -116,7 +129,7 @@ namespace RaceGame
             {
                 case MOIS.KeyCode.KC_SPACE:
                     {
-                        Tutorial.shoot = true;
+                        //Tutorial.shoot = true;
                         break;
                     }
                 case MOIS.KeyCode.KC_E:

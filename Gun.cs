@@ -53,8 +53,17 @@ namespace RaceGame
             return direction;
         }
 
-        virtual protected void LoadModel() { }
-        virtual public void ReloadAmmo() { }
-        virtual public void Fire() { }        
+        virtual protected void LoadModel() 
+        { }
+
+
+        virtual public void ReloadAmmo() 
+        { }
+
+
+        virtual public void Fire() 
+        { }        
+
+
     }
 }

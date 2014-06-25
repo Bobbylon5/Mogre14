@@ -7,9 +7,8 @@ namespace Mogre.Tutorial
     /// <summary>
     /// This class implements the ground of the environment
     /// </summary>
-    class Ground : StaticElement
+    class Ground : StaticElement 
     {
-        //SceneManager mSceneMgr;
         Plane plane;
         Entity groundEntity;
         SceneNode groundNode;
@@ -46,7 +45,6 @@ namespace Mogre.Tutorial
         private void CreateGround()
         {
             GroundPlane();
-            
         }
 
 
@@ -67,17 +65,6 @@ namespace Mogre.Tutorial
             groundNode.AttachObject(groundEntity);
             mSceneMgr.RootSceneNode.AddChild(groundNode);
             groundEntity.SetMaterialName("Meteor");
-        }
-
-        /// <summary>
-        /// This method disposes of the scene node and enitity
-        /// </summary>
-        public void Dispose()
-        {
-           groundNode.DetachAllObjects();
-           groundNode.Parent.RemoveChild(groundNode);
-           groundNode.Dispose();
-           groundEntity.Dispose();
         }
     }
 }

@@ -8,6 +8,7 @@ namespace RaceGame
     /// </summary>
     abstract class CharacterModel:MovableElement
     { 
+
         Vector3 left;               // This field contains the left direction for the character model
         /// <summary>
         /// Read only. This property returns the left direction of the character model
@@ -50,17 +51,20 @@ namespace RaceGame
         /// <summary>
         /// This virtual method is to initialize the model elements
         /// </summary>
-        virtual protected void LoadModelElements() { }
+        virtual protected void LoadModelElements() 
+        { }
 
         /// <summary>
         /// This virtual method is to define how the model is assembled
         /// </summary>
-        virtual protected void AssembleModel() { }
+        virtual protected void AssembleModel() 
+        { }
 
         /// <summary>
         /// This virtual method is for dispose all the components of the character model
         /// </summary>
-        virtual public void DisposeModel() { }
+        virtual public void DisposeModel() 
+        { }
         
         /// <summary>
         /// This method dispose of the character model

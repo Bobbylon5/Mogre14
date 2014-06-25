@@ -11,8 +11,10 @@ namespace RaceGame
     class PlayerModel : CharacterModel
     {
         #region Fields
-        SceneManager mSceneMgr;
+        #region test 2
+        //SceneManager mSceneMgr;
 
+        
         PhysObj physObj;
  
         SceneNode model;                            // Root for the sub-graph
@@ -31,39 +33,39 @@ namespace RaceGame
         Vector3 direction;                           // Direction of motion of the mesh for a single frame
         float radius;                         // Radius of the circular trajectory of the mesh
 
-        //const float maxTime = 2000f;        // Time when the animation have to be changed
-        //Timer time;                         // Timer for animation changes
-        //AnimationState animationState1;      // Animation state, retrieves and store an animation from an Entity
-        //bool animationChanged;              // Flag which tells when the mesh animation has changed
-        //string animationName;               // Name of the animation to use
-
+        const float maxTime = 2000f;        // Time when the animation have to be changed
+        Timer time;                         // Timer for animation changes
+        AnimationState animationState1;      // Animation state, retrieves and store an animation from an Entity
+        bool animationChanged;              // Flag which tells when the mesh animation has changed
+        string animationName;               // Name of the animation to use
+        #endregion
         #endregion
 
         /// <summary>
         /// This method returns the root node for the sub-scenegraph representing the compound model
         /// </summary>
-        public SceneNode Model
-        {
-            get { return model; }
-        }
+        //public SceneNode Model
+        //{
+        //    get { return model; }
+        //}
 
-        //
+        
         #region AnimationName()
         /// <summary>
         /// Write only. This property allows to change the animation 
         /// passing the name of one of the animations in the animation state set
         /// </summary>
-        //public string AnimationName
-        //{
-        //    set
-        //    {
-        //        HasAnimationChanged(value);
-        //        if (IsValidAnimationName(value))
-        //            animationName = value;
-         //       else
-        //            animationName = "Idle";
-        //    }
-        //}
+        public string AnimationName
+        {
+            set
+            {
+                HasAnimationChanged(value);
+                if (IsValidAnimationName(value))
+                    animationName = value;
+                else
+                    animationName = "Idle";
+            }
+        }
         #endregion
 
         #region Position()
@@ -99,7 +101,7 @@ namespace RaceGame
 
             LoadModelElements();
             AssembleModel();
-            //AnimationSetup();
+            AnimationSetup();
         }
         #endregion
 
@@ -176,93 +178,102 @@ namespace RaceGame
         }
         #endregion
 
+
+
+
         //
         #region Annimation Setup()
         /// <summary>
         /// This method set up all the field needed for animation
         /// </summary>
-       // private void AnimationSetup()
-       // {
-        //    radius = 0.01f;
-        //    direction = Vector3.ZERO;
-        //    angle = 0f;
+        private void AnimationSetup()
+         {
+            radius = 0.01f;
+            direction = Vector3.ZERO;
+            angle = 0f;
 
-        //    time = new Timer();
-        //    PrintAnimationNames();
-         //   animationChanged = false;
-        //    animationName = "Walk";
-        //    LoadAnimation();
-        //}
+            //time = new Timer();
+            //PrintAnimationNames();
+            animationChanged = false;
+            animationName = "Move";
+            LoadAnimation();
+        }
         #endregion
+
         //
         #region Circular Motion()
         /// <summary>
-        /// This method this method makes the mesh move in circle
+        /// This method this method makes the mesh wheel move in circle
         /// </summary>
         /// <param name="evt">A frame event which can be used to tune the animation timings</param>
-        //private void CircularMotion(FrameEvent evt)
-        //{
-        //    angle += (Radian)evt.timeSinceLastFrame;
-        //    direction = radius * new Vector3(Mogre.Math.Cos(angle), 0, Mogre.Math.Sin(angle));
-        //    model.Translate(direction);
-        //    model.Yaw(-evt.timeSinceLastFrame);
-        //}
+        private void CircularMotion(FrameEvent evt)
+        {
+            angle += (Radian)evt.timeSinceLastFrame;
+            direction = radius * new Vector3(Mogre.Math.Cos(angle), 0, Mogre.Math.Sin(angle));
+            sphere.Translate(direction);
+            sphere.Yaw(-evt.timeSinceLastFrame);
+        }
         #endregion
+
         //
         #region Has annimation changed()
         /// <summary>
         /// This method sets the animationChanged field to true whenever the animation name changes
         /// </summary>
         /// <param name="newName"> The new animation name </param>
-        //private void HasAnimationChanged(string newName)
-        //{
-         //   if (newName != animationName)
-        //        animationChanged = true;
-        //}
+        private void HasAnimationChanged(string newName)
+        {
+            if (newName != animationName)
+                animationChanged = true;
+        }
         #endregion
+        
+
         //
         #region Print annimation names()
         /// <summary>
         /// This method prints on the console the list of animation tags
         /// </summary>
         //private void PrintAnimationNames()
-        //{
-       //     AnimationStateSet animStateSet = sphereEntity.AllAnimationStates;                    // Getd the set of animation states in the Entity
-        //    AnimationStateIterator animIterator = animStateSet.GetAnimationStateIterator();     // Iterates through the animation states
-
+        //  {
+        //        AnimationStateSet animStateSet = sphereEntity.AllAnimationStates;                    // Getd the set of animation states in the Entity
+        //          AnimationStateIterator animIterator = animStateSet.GetAnimationStateIterator();     // Iterates through the animation states
+        //
         //    while (animIterator.MoveNext())                                                     // Gets the next animation state in the set
         //    {
         //        Console.WriteLine(animIterator.CurrentKey);                                     // Print out the animation name in the current key
         //    }
         //}
         #endregion
-        //
+        
+
         #region Is valid animation name()
         /// <summary>
         /// This method deternimes whether the name inserted is in the list of valid animation names
         /// </summary>
         /// <param name="newName">An animation name</param>
         /// <returns></returns>
-        //private bool IsValidAnimationName(string newName)
-        //{
-         //   bool nameFound = false;
+        private bool IsValidAnimationName(string newName)
+        {
+            bool nameFound = false;
 
-         //   AnimationStateSet animStateSet = sphereEntity.AllAnimationStates;
-         //   AnimationStateIterator animIterator = animStateSet.GetAnimationStateIterator();
+            AnimationStateSet animStateSet = sphereEntity.AllAnimationStates;
+            AnimationStateIterator animIterator = animStateSet.GetAnimationStateIterator();
 
-         //   while (animIterator.MoveNext() && !nameFound)
-         //   {
-         //       if (newName == animIterator.CurrentKey)
-         //       {
-        //            nameFound = true;
-        //        }
-        //    }
+            while (animIterator.MoveNext() && !nameFound)
+            {
+                if (newName == animIterator.CurrentKey)
+                {
+                    nameFound = true;
+                }
+            }
 
-        //    return nameFound;
-        //}
+            return nameFound;
+        }
         #endregion
+        
         //
-        #region change animation name()
+        #region change random animation name()
         /// <summary>
         /// This method changes the animation name randomly
         /// </summary>
@@ -272,78 +283,70 @@ namespace RaceGame
         //    {
         //        case 0:
         //            {
-        //                animationName = "Walk";
+        //                animationName = "Move";
         //                break;
         //            }
-         //       case 1:
+        //        case 1:
         //            {
-        //                animationName = "Shoot";
+        //                animationName = "Idle";
         //                break;
         //            }
-        //        case 2:
-         //           {
-         //               animationName = "Idle";
-         //               break;
-         //           }
-          //      case 3:
-          //          {
-          //              animationName = "Slump";
-          //              break;
-          //          }
-         //       case 4:
-         //           {
-         //               animationName = "Die";
-         //               break;
-         //           }
-         //   }
-       // }
+        //    }
+        //}
         #endregion
+
+
         //
         #region LoadAnimation()
         /// <summary>
         /// This method loads the animation from the animation name
         /// </summary>
-        //private void LoadAnimation()
-        //{
-        //    animationState1 = sphereEntity.GetAnimationState(animationName);
-        //    animationState1.Loop = true;
-        //    animationState1.Enabled = true;
-        //}
+        private void LoadAnimation()
+        {
+            //animationState1.
+            //CircularMotion();
+            //animationState1.Loop = true;
+            //animationState1.Enabled = true;
+        }
         #endregion
+
+
         //
         #region AnimateMesh()
         /// <summary>
         /// This method puts the mesh in motion
         /// </summary>
         /// <param name="evt">A frame event which can be used to tune the animation timings</param>
-        //private void AnimateMesh(FrameEvent evt)
-       // {
-         //   if (time.Milliseconds > maxTime)
-         //   {
-          //      changeAnimationName();
-         //       time.Reset();
-         //   }
+        private void AnimateMesh(FrameEvent evt)
+        {
+            if (time.Milliseconds > maxTime)
+            {
+                //changeAnimationName();
+                time.Reset();
+            }
 
-        //    if (animationChanged)
-        //    {
-         //       LoadAnimation();
-         //       animationChanged = false;
-         //   }
+            if (animationChanged)
+            {
+                LoadAnimation();
+                animationChanged = false;
+            }
 
-         //   animationState1.AddTime(evt.timeSinceLastFrame);
-        //}
+            animationState1.AddTime(evt.timeSinceLastFrame);
+        }
         #endregion
+
+
         //
         #region Animate()
         /// <summary>
         /// This method animates the robot mesh
         /// </summary>
         /// <param name="evt">A frame event which can be used to tune the animation timings</param>
-        //public void Animate(FrameEvent evt)
-        //{
-        //    CircularMotion(evt);
-        //    AnimateMesh(evt);
-        //}
+        public void Animate(FrameEvent evt)
+        {
+            CircularMotion(evt);
+            AnimateMesh(evt);
+        }
         #endregion
 
 
@@ -361,7 +364,7 @@ namespace RaceGame
         /// This method moves the model as a whole
         /// </summary>
         /// <param name="direction">The direction along which move the model</param>
-        public void hMove(Vector3 direction)
+        public void xMove(Vector3 direction)
         {
             hullGroup.Translate(direction);             // Notice that only the root od the sub-scenegraph is transformed, 
             // all the sub-nodes are tranformed as a consequence of this transformation
@@ -393,7 +396,7 @@ namespace RaceGame
         /// This method rotate the robot accordingly  with the given angles
         /// </summary>
         /// <param name="angles">The angles by which rotate the robot along each main axis</param>
-        public void Rotate(Vector3 angles)
+        public void xRotate(Vector3 angles)
         {
            model.Yaw(angles.x);  
         }

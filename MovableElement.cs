@@ -30,7 +30,8 @@ namespace RaceGame
         /// This virtual method is to contain the translation of the movable element in the given direction
         /// </summary>
         /// <param name="direction">Direction along which move the movable element</param>
-        virtual public void Move(Vector3 direction){ }
+        virtual public void Move(Vector3 direction)
+        { }
 
         /// <summary>
         /// This virtual method is to contain the rotation the movable element by the given quaternion in the specified transform space
@@ -38,12 +39,14 @@ namespace RaceGame
         /// <param name="quaternion">Quaternion which describes axis and rotation angle</param>
         /// <param name="transformSpace">Space on which apply the rotation, local by default</param>
         virtual public void Rotate(Quaternion quaternion, 
-                   Node.TransformSpace transformSpace = Node.TransformSpace.TS_LOCAL) { }
+                   Node.TransformSpace transformSpace = Node.TransformSpace.TS_LOCAL) 
+        { }
 
         /// <summary>
         /// This virtual method is to contain the animation description of the movable element
         /// </summary>
         /// <param name="evt">A frame event which can be used to tune the animation timings</param>
-        virtual public void Animate(FrameEvent evt) { }
+        virtual public void Animate(FrameEvent evt) 
+        { }
     }
 }

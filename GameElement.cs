@@ -84,6 +84,7 @@ namespace RaceGame
         /// <param name="position">The position in which to put the game element</param>
         virtual public void SetPosition(Vector3 position)
         {
+            //gameNode.Translate(position);
             gameNode.Position = position;
             physObj.Position = gameNode.Position;
         }

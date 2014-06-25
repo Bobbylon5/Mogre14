@@ -1,0 +1,7 @@
+\\psf\Home\Desktop\3d Project\bin\Debug\Tutorial.exe.config
+\\psf\Home\Desktop\3d Project\obj\x86\Debug\Tutorial.exe
+\\psf\Home\Desktop\3d Project\obj\x86\Debug\Game.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\3d Project\bin\Debug\Tutorial.exe
+\\psf\Home\Desktop\3d Project\bin\Debug\Tutorial.pdb
+\\psf\Home\Desktop\3d Project\bin\Debug\Mogre.xml
+\\psf\Home\Desktop\3d Project\obj\x86\Debug\Tutorial.pdb
